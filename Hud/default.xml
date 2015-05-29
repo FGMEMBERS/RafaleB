@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<!--
+Mirage 2000C/RDI HUD, Fabrice Kauffmann, 2006.12.26, based on:
+
+Preliminary Default Hud.
+November 2000
+Neetha Girish <neetha@ada.ernet.in>
+
+Based on Default Panel by David Megginson, david@megginson.com.
+
+This is a Hud configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the Hud.
+
+Each instrument is, itself, defined in an XML-encoded property list
+in a separate file.
+
+-->
+
+<PropertyList>
+
+<name>Default Aircraft Hud</name>
+
+<instruments>
+
+<hudladder>
+	<path>Aircraft/RafaleB/Hud/hudladder.xml</path>
+</hudladder>
+
+<hudcard>
+	<path>Aircraft/RafaleB/Hud/hudcard.xml</path>
+</hudcard>
+
+<instrlabel>
+	<path>Aircraft/RafaleB/Hud/instrlabel.xml</path>
+</instrlabel>
+
+<fgTBI>
+<path>Aircraft/RafaleB/Hud/tbi.xml</path>
+</fgTBI>
+
+</instruments>
+
+</PropertyList>

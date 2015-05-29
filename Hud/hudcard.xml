@@ -1,0 +1,97 @@
+<PropertyList>
+
+ <cards>
+  <c2>
+   <name>Altitude-MSL</name>
+   <x>370</x>
+   <y>185</y>  
+   <width>10</width>
+   <height>115</height>
+   <loadfn>altitude</loadfn>
+   <maxValue>100.0</maxValue>
+   <minValue>-100.0</minValue>
+   <disp_scaling>0.001</disp_scaling>
+   <major_divs>1000</major_divs>
+   <minor_divs>100</minor_divs>
+   <modulator>0</modulator>
+   <value_span>2400.0</value_span>
+   <type>tape</type>
+   <options>10</options>
+   <tick_bottom>true</tick_bottom>
+   <tick_top>true</tick_top>
+   <tick_right>false</tick_right>
+   <tick_left>false</tick_left>
+   <cap_bottom>false</cap_bottom>
+   <cap_top>false</cap_top>
+   <cap_right>false</cap_right>
+   <cap_left>false</cap_left>
+   <marker_offset>5</marker_offset>
+   <enable_pointer>true</enable_pointer>
+   <pointer_type>fixed</pointer_type>
+   <working>true</working>
+  </c2>
+
+  <c3>
+   <name>KIAS</name>
+   <x>252</x>
+   <y>185</y>
+   <width>10</width>
+   <height>115</height>
+   <loadfn>speed</loadfn>
+   <maxValue>850.0</maxValue>
+   <minValue>0.0</minValue>
+   <disp_scaling>0.1</disp_scaling>
+   <major_divs>10</major_divs>
+   <minor_divs>1</minor_divs>
+   <modulator>0</modulator>
+   <value_span>24.0</value_span>
+   <type>tape</type>
+   <options>6</options>
+   <tick_bottom>true</tick_bottom>
+   <tick_top>true</tick_top>
+   <tick_right>false</tick_right>
+   <tick_left>false</tick_left>
+   <cap_bottom>false</cap_bottom>
+   <cap_top>false</cap_top>
+   <cap_right>false</cap_right>
+   <cap_left>false</cap_left>
+   <marker_offset>5</marker_offset>
+   <enable_pointer>true</enable_pointer>
+   <pointer_type>fixed</pointer_type>
+   <working>true</working>
+  </c3>
+
+  <g3>
+   <name>Gauge3</name>
+   <x>270</x>
+   <y>150</y>
+   <width>100</width>
+   <height>10</height>
+   <loadfn>rudderval</loadfn>
+   <options>132</options> <!-- HUDS_TOP | HUDS_NOTEXT -->
+   <maxValue>+1.0</maxValue>
+   <minValue>-1.0</minValue>
+   <disp_scaling>100.0</disp_scaling>
+   <major_divs>50</major_divs>
+   <minor_divs>0</minor_divs>
+   <modulator>0</modulator>
+   <value_span>2.0</value_span>	<!-- (maxValue - minValue) -->
+   <type>gauge</type>
+   <tick_bottom>false</tick_bottom>
+   <tick_top>false</tick_top>
+   <tick_right>true</tick_right>
+   <tick_left>true</tick_left>
+   <cap_bottom>true</cap_bottom>
+   <cap_top>false</cap_top>
+   <cap_right>false</cap_right>
+   <cap_left>false</cap_left>
+   <marker_offset>0.0</marker_offset>
+   <enable_pointer>true</enable_pointer>
+   <pointer_type>fixed</pointer_type>
+   <working>true</working>
+  </g3>
+
+
+ </cards>
+
+</PropertyList>

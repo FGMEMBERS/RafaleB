@@ -1,0 +1,600 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Dassault Rafale B - Animations config file 0.6
+Tigermeet 2008
+Fabrice Kauffmann (fabrice.kauffmann@gmail.com)
+************************************************************************
+-->
+<PropertyList>
+	<!-- Main AC3D model -->
+	<path>RafaleT08.ac</path>
+	<offsets>
+		<z-m>0.57</z-m>
+	</offsets>
+	
+	<!-- No shadows -->
+	<animation>
+		<type>noshadow</type>
+		<object-name>landing_lights</object-name>
+		<object-name>afterburner</object-name>
+		<object-name>nav_light_green</object-name>
+		<object-name>nav_light_red</object-name>
+		<object-name>contrails</object-name>
+	</animation>
+
+	<!-- Canopy reflection effect -->
+	<animation>
+		<type>shader</type> 
+		<shader>chrome</shader> 
+		<texture>glass_shader.png</texture> 
+		<object-name>canopy</object-name> 
+	</animation>	
+	
+	<!-- Afterburner effect -->
+	<animation>
+		<type>select</type>
+		<object-name>afterburner</object-name>
+		<condition>
+			<equals>
+				<property>controls/engines/engine[0]/throttle</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<!-- Left Multi-Function Display -->
+	<model>
+		<name>mfd</name>
+		<path>Aircraft/RafaleB/Models/Instruments/mfd.xml</path>
+		<offsets>
+			<x-m>-3.16791</x-m>
+			<y-m>-0.130576</y-m>
+			<z-m>0.62302</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<!-- Compas and ADF direction finder -->
+	<model>
+		<name>compas</name>
+		<path>Aircraft/RafaleB/Models/Instruments/compas.xml</path>
+		<offsets>
+			<x-m>-3.16791</x-m>
+			<y-m>0.123</y-m>
+			<z-m>0.62302</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<!-- Top mirror -->
+	<model>
+		<name>topmirror</name>
+		<path>Aircraft/RafaleB/Models/Instruments/topmirror.xml</path>
+		<offsets>
+			<x-m>-3.33005</x-m>
+			<y-m>-0.00432502</y-m>
+			<z-m>0.953924</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<!-- Left mirror -->
+	<model>
+		<name>leftmirror</name>
+		<path>Aircraft/RafaleB/Models/Instruments/leftmirror.xml</path>
+		<offsets>
+			<x-m>-3.27068</x-m>
+			<y-m>-0.19</y-m>
+			<z-m>0.802442</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<!-- Right mirror -->
+	<model>
+		<name>rightmirror</name>
+		<path>Aircraft/RafaleB/Models/Instruments/rightmirror.xml</path>
+		<offsets>
+			<x-m>-3.27068</x-m>
+			<y-m>0.175</y-m>
+			<z-m>0.802442</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<!-- Various switches -->
+	<model>
+		<name>switches</name>
+		<path>Aircraft/RafaleB/Models/Instruments/switches2.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- APU -->
+	<model>
+		<name>apu</name>
+		<path>Aircraft/RafaleB/Models/apu.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<!-- Moving map -->
+	<model>
+		<name>map</name>
+		<path>Aircraft/RafaleB/Models/Instruments/map.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<!-- Hide the canopy in view 0 -->
+	<animation>
+		<type>select</type>
+		<object-name>canopy</object-name>
+		<condition>
+			<not>
+				<equals>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+				</equals>
+			</not>
+		</condition>
+	</animation>
+	
+	<!-- Hide the pilots in view 0 -->
+	<animation>
+		<type>select</type>
+		<object-name>pilots</object-name>
+		<condition>
+			<not>
+				<equals>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+				</equals>
+			</not>
+		</condition>
+	</animation>
+	
+	<!-- Stick animation on Y axis -->
+	<animation>
+		<type>rotate</type>
+		<object-name>stick</object-name>
+		<property>/controls/flight/elevator</property>
+		<factor>-8</factor>
+		<center>
+			<x-m>-3.02551</x-m>
+			<y-m>0.213515</y-m>
+			<z-m>0.399936</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	
+	<!-- Stick animation on X axis -->		
+	<animation>
+		<type>rotate</type>
+		<object-name>stick</object-name>
+		<property>/controls/flight/aileron</property>
+		<factor>-8</factor>
+		<center>
+			<x-m>-3.02551</x-m>
+			<y-m>0.213515</y-m>
+			<z-m>0.399936</z-m>
+		</center>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>	
+	
+	<!-- Throttle animation on X axis -->
+	<animation>
+		<type>translate</type>
+		<object-name>throttle</object-name>
+		<property>controls/engines/engine[0]/throttle</property>
+		<factor>-0.10</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>	
+	
+	<!-- Switch the landing lights on/off depending on time -->
+	<animation>
+		<type>select</type>
+		<object-name>landing_lights</object-name>
+		<object-name>nav_light_red</object-name>
+		<object-name>nav_light_green</object-name>
+		<condition>
+		<greater-than>
+			<property>sim/time/sun-angle-rad</property>
+			<value>1.57</value>
+		</greater-than>
+		</condition>
+	</animation>
+	
+	<!-- Nav lights always face the observer -->
+	<animation>
+		<type>translate</type>
+		<object-name>nav_light_green</object-name>
+		<offset-m>1.6</offset-m>
+		<axis>
+			<x>-0.35</x>
+			<y>1.0</y>
+			<z>0.05</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>billboard</type>
+		<object-name>nav_light_green</object-name>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>nav_light_red</object-name>
+		<offset-m>1.6</offset-m>
+		<axis>
+			<x>-0.35</x>
+			<y>-1.0</y>
+			<z>0.05</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>billboard</type>
+		<object-name>nav_light_red</object-name>
+	</animation>
+	
+	<!-- Landing lights -->
+	<animation>
+		<type>select</type>
+		<object-name>landing_lights</object-name>
+		<condition>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<!-- Landing gears -->
+	<animation>
+		<type>select</type>
+		<object-name>train_avant</object-name>
+		<object-name>train_gauche</object-name>
+		<object-name>train_droit</object-name>
+		<object-name>trappe_avant_gauche</object-name>
+		<object-name>trappe_avant_droit</object-name>
+		<object-name>trappe_gauche</object-name>
+		<object-name>trappe_droite</object-name>
+		<condition>
+			<greater-than>
+				<property>gear/gear[0]/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>trappes</object-name>
+		<condition>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>train_avant</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<factor>90</factor>
+		<offset-deg>-90</offset-deg>
+		<center>
+			<x-m>-2.206</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.482</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>train_gauche</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<factor>90</factor>
+		<offset-deg>-90</offset-deg>
+		<axis>
+			<x1-m>2.3</x1-m>
+			<y1-m>0.751</y1-m>
+			<z1-m>-0.218</z1-m>
+			<x2-m>1.7715</x2-m>
+			<y2-m>-0.751</y2-m>
+			<z2-m>-0.218</z2-m>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>train_droit</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<factor>90</factor>
+		<offset-deg>-90</offset-deg>
+		<axis>
+			<x1-m>1.7715</x1-m>
+			<y1-m>0.751</y1-m>
+			<z1-m>-0.218</z1-m>
+			<x2-m>2.3</x2-m>
+			<y2-m>-0.751</y2-m>
+			<z2-m>-0.218</z2-m>
+		</axis>
+	</animation>
+	
+	<!-- Right aileron -->
+	<animation>
+		<type>rotate</type>
+		<object-name>aileron_droit</object-name>
+		<property>surface-positions/right-aileron-pos-norm</property>
+		<factor>25</factor>
+		<axis>
+			<x1-m>3.734</x1-m>
+			<y1-m>4.360</y1-m>
+			<z1-m>-0.075</z1-m>
+			<x2-m>3.734</x2-m>
+			<y2-m>2.275</y2-m>
+			<z2-m>0.015</z2-m>
+		</axis>
+	</animation>
+	
+	<!-- Left aileron -->
+	<animation>
+		<type>rotate</type>
+		<object-name>aileron_gauche</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<factor>25</factor>
+		<axis>
+			<x1-m>3.734</x1-m>
+			<y1-m>-4.367</y1-m>
+			<z1-m>-0.075</z1-m>	
+			<x2-m>3.734</x2-m>
+			<y2-m>-2.281</y2-m>
+			<z2-m>0.015</z2-m>
+		</axis>
+	</animation>
+	
+	<!-- Left "canard" -->
+	<animation>
+		<type>rotate</type>
+		<object-name>canard_gauche</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<factor>-20</factor>
+		<axis>
+			<x2-m>-1.717</x2-m>
+			<y2-m>-1.017</y2-m>
+			<z2-m>0.247</z2-m>
+			<x1-m>-1.181</x1-m>
+			<y1-m>-2.237</y1-m>
+			<z1-m>0.313</z1-m>
+		</axis>
+	</animation>
+	
+	<!-- Ritgh "canard" -->
+	<animation>
+		<type>rotate</type>
+		<object-name>canard_droit</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<factor>-20</factor>
+		<axis>
+			<x1-m>-1.717</x1-m>
+			<y1-m>1.017</y1-m>
+			<z1-m>0.247</z1-m>
+			<x2-m>-1.181</x2-m>
+			<y2-m>2.237</y2-m>
+			<z2-m>0.313</z2-m>
+		</axis>
+	</animation>
+	
+	<!-- Left flap -->
+	<animation>
+		<type>rotate</type>
+		<object-name>volet_gauche</object-name>
+		<property>surface-positions/flap-pos-norm</property>
+		<factor>40</factor>
+		<axis>
+			<x1-m>3.734</x1-m>
+			<y1-m>-2.281</y1-m>
+			<z1-m>0.015</z1-m>
+			<x2-m>3.734</x2-m>
+			<y2-m>-1.266</y2-m>
+			<z2-m>0.081</z2-m>
+		</axis>
+	</animation>
+	
+	<!-- Right flap -->
+	<animation>
+		<type>rotate</type>
+		<object-name>volet_droit</object-name>
+		<property>surface-positions/flap-pos-norm</property>
+		<factor>-40</factor>
+		<axis>
+			<x1-m>3.734</x1-m>
+			<y1-m>2.281</y1-m>
+			<z1-m>0.015</z1-m>
+			<x2-m>3.734</x2-m>
+			<y2-m>1.266</y2-m>
+			<z2-m>0.081</z2-m>
+		</axis>
+	</animation>
+	
+	<!-- Left elevator -->
+	<animation>
+		<type>rotate</type>
+		<object-name>volet_gauche</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<factor>20</factor>
+		<axis>
+			<x1-m>3.734</x1-m>
+			<y1-m>-2.281</y1-m>
+			<z1-m>0.015</z1-m>
+			<x2-m>3.734</x2-m>
+			<y2-m>-1.266</y2-m>
+			<z2-m>0.081</z2-m>
+		</axis>
+	</animation>
+	
+	<!-- Right elevator -->
+	<animation>
+		<type>rotate</type>
+		<object-name>volet_droit</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<factor>-20</factor>
+		<axis>
+			<x1-m>3.734</x1-m>
+			<y1-m>2.281</y1-m>
+			<z1-m>0.015</z1-m>
+			<x2-m>3.734</x2-m>
+			<y2-m>1.266</y2-m>
+			<z2-m>0.081</z2-m>
+		</axis>
+	</animation>
+	
+	<!-- Rudder -->
+	<animation>
+		<type>rotate</type>
+		<object-name>derive</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<factor>30</factor>
+		<axis>
+			<x1-m>4.66</x1-m>
+			<y1-m>0.0</y1-m>
+			<z1-m>0.75</z1-m>
+			<x2-m>5.80</x2-m>
+			<y2-m>0.0</y2-m>
+			<z2-m>2.52</z2-m>
+
+		</axis>
+	</animation>
+
+	<!-- Landing gears compression -->
+	<animation>
+		<condition>
+			<equals>
+			<property>gear/gear[0]/position-norm</property>
+			<value>1</value>
+			</equals>
+		</condition>
+		<type>translate</type>
+		<object-name>train_avant</object-name>
+		<object-name>landing_lights</object-name>
+		<property>gear/gear[0]/compression-norm</property>
+		<factor>0.2</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<condition>
+			<equals>
+			<property>gear/gear[1]/position-norm</property>
+			<value>1</value>
+			</equals>
+		</condition>
+		<type>translate</type>
+		<object-name>train_gauche</object-name>
+		<property>gear/gear[1]/compression-norm</property>
+		<factor>0.2</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<condition>
+			<equals>
+			<property>gear/gear[2]/position-norm</property>
+			<value>1</value>
+			</equals>
+		</condition>
+		<type>translate</type>
+		<object-name>train_droit</object-name>
+		<property>gear/gear[2]/compression-norm</property>
+		<factor>0.2</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+
+	<!-- Weapons and tanks display -->
+	
+	<animation>
+		<type>select</type>
+		<object-name>bidon_gauche</object-name>
+		<object-name>bidon_droit</object-name>
+		<condition>
+			<equals>
+				<property>sim/model/hide-tank</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>mistral_gauche</object-name>
+		<object-name>mistral_droit</object-name>
+		<condition>
+			<equals>
+				<property>sim/model/hide-missile</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>bidon_ventral</object-name>
+		<condition>
+			<equals>
+				<property>sim/model/hide-pendular-tank</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>contrails</object-name>
+		<condition>
+		<greater-than>
+		<property>orientation/alpha-deg</property>
+		<value>6.0</value>
+		</greater-than>
+		</condition>
+	</animation>	
+</PropertyList>

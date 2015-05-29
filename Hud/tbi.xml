@@ -1,0 +1,21 @@
+<PropertyList>
+
+ <tbis>
+
+  <f1>
+  <name>fgTBI_Instrument</name>
+  <x>307</x>
+  <y>242</y>
+  <width>20</width>
+  <height>5</height>
+  <loadfn>roll</loadfn>
+  <loadfn1>sideslip</loadfn1>
+  <maxBankAngle>45.0</maxBankAngle>
+  <maxSlipAngle>5.0</maxSlipAngle>
+  <gap_width>5</gap_width>
+  <working>true</working>
+  </f1>
+
+ </tbis>
+
+</PropertyList>

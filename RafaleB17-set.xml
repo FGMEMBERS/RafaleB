@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Dassault Rafale B - Model config file 0.6
+Fabrice Kauffmann (fabrice.kauffmann@gmail.com)
+************************************************************************
+-->
+<PropertyList>
+	<sim>
+		<description>Dassault Rafale B Escadron de chasse 1/7 Provence</description>
+		<author>Fabrice Kauffmann</author>
+		<status>Early development</status>
+		<flight-model>jsb</flight-model>
+		<aero>RafaleB-jsbsim</aero>
+		
+		<startup>
+			<splash-texture>Aircraft/RafaleB/RafaleB-splash.png</splash-texture>
+		</startup>
+		
+		<model>
+			<path>Aircraft/RafaleB/Models/RafaleB17-model.xml</path>
+			<hide-paveway type="int">1</hide-paveway>
+			<hide-scalp type="int">0</hide-scalp>
+			<hide-tank type="int">1</hide-tank>
+			<hide-missile type="int">1</hide-missile>
+			<hide-pendular-tank type="int">0</hide-pendular-tank>
+			<hide-apu type="int">0</hide-apu>
+		</model>
+
+		<sound>
+			<path>Aircraft/RafaleB/RafaleB-sound.xml</path>
+		</sound>
+
+		<hud>
+			<path n="1">Aircraft/RafaleB/RafaleB-hud.xml</path>
+			<visibility n="1">true</visibility>
+		</hud>
+
+		<view n="0">
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y">0</x-offset-m>
+				<y-offset-m archive="y">1.37</y-offset-m>
+				<z-offset-m archive="y">-2.65</z-offset-m>
+				<pitch-offset-deg>0</pitch-offset-deg>
+				<default-field-of-view-deg>75</default-field-of-view-deg>
+			</config>
+		</view>
+		
+		<view n="100">
+			<name>Tail View</name>
+			<internal archive="y">true</internal>
+			<type>lookfrom</type>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m archive="y">0</x-offset-m>
+				<y-offset-m archive="y">3.96</y-offset-m>
+				<z-offset-m archive="y">3.00</z-offset-m>
+				<pitch-offset-deg>-30</pitch-offset-deg>
+				<default-field-of-view-deg>55.0</default-field-of-view-deg>
+			</config>
+		</view>
+		
+		<view n="101">
+			<name>Pylon View</name>
+			<internal archive="y">true</internal>
+			<type>lookfrom</type>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m archive="y">-1.14</x-offset-m>
+				<y-offset-m archive="y">0.00</y-offset-m>
+				<z-offset-m archive="y">1.38</z-offset-m>
+				<pitch-offset-deg>0</pitch-offset-deg>
+				<default-field-of-view-deg>55.0</default-field-of-view-deg>
+			</config>
+		</view>
+		
+		<view n="102">
+			<name>Wing View</name>
+			<internal archive="y">true</internal>
+			<type>lookat</type>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<at-model type="bool">true</at-model>
+				<at-model-idx type="int">0</at-model-idx>
+				<x-offset-m archive="y">-13.26</x-offset-m>
+				<y-offset-m archive="y">6.81</y-offset-m>
+				<z-offset-m archive="y">0.00</z-offset-m>
+				<pitch-offset-deg>0</pitch-offset-deg>
+				<default-field-of-view-deg>55.0</default-field-of-view-deg>
+			</config>
+		</view>
+
+		<chase-distance-m>-25</chase-distance-m>
+
+		<ai-traffic>
+			<enabled type="bool">true</enabled>
+		</ai-traffic>
+		
+		<menubar>
+			<default>
+				<menu n="99">
+					<label>Rafale B</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Show/Hide Paveway</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/model/hide-paveway</property>
+						</binding>
+					</item>
+					<item>
+						<label>Show/Hide Apache</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/model/hide-scalp</property>
+						</binding>
+					</item>
+					<item>
+						<label>Show/Hide External Tanks</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/model/hide-tank</property>
+						</binding>
+					</item>
+					<item>
+						<label>Show/Hide Missiles</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/model/hide-missile</property>
+						</binding>
+					</item>
+					<item>
+						<label>Show/Hide Middle Tank</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/model/hide-pendular-tank</property>
+						</binding>
+					</item>
+					<item>
+						<label>Show/Hide External Power Unit</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/model/hide-apu</property>
+						</binding>
+					</item>
+					</menu>
+			</default>
+		</menubar>
+	</sim>
+
+	<engines>
+		<engine n="0">
+			<running>true</running>
+		</engine>
+		<engine n="1">
+			<running>true</running>
+		</engine>
+
+	</engines>
+
+	<consumables>
+		<fuel>
+			<tank n="0">
+				<level-gal_us archive="y">15000</level-gal_us>
+			</tank>
+		</fuel>
+	</consumables>
+
+	<!-- Start with the Parking Brake on -->
+	<controls>
+		<gear>
+			<brake-parking type="double">1.0</brake-parking>
+		</gear>
+	</controls>
+</PropertyList>

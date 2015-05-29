@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>apu.ac</path>
+	<animation>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/model/hide-apu</property>
+				<value>1</value>
+			</equals>
+			<less-than>
+				<property>velocities/airspeed-kt</property>
+				<value>0.2</value>
+			</less-than>
+		</condition>
+	</animation>
+	
+</PropertyList>
